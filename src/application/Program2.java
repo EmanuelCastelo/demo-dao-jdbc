@@ -13,13 +13,20 @@ public class Program2 {
 
 		DepartmentDao depDao = DaoFactory.createDepartmentDao();
 
-		System.out.println("=== TEST 1: Seller findById ====");
+		System.out.println("=== TEST 1: Department findById ====");
 		Department dep = depDao.findById(4);
 		System.out.println(dep);
 
-		System.out.println("\n=== TEST 3: Seller findAll ====");
+		System.out.println("\n=== TEST 3: Department findAll ====");
 		List<Department> list = depDao.findAll();
 		list.forEach(System.out::println);
+
+		System.out.println("\n=== TEST 4: Department insert ====");
+		Department newDep = new Department(null, "Tools");
+		System.out.println(newDep);
+		depDao.insert(newDep);
+		System.out.println("Inserted!");
+		System.out.println(newDep);
 
 		DB.closeConnection();
 
