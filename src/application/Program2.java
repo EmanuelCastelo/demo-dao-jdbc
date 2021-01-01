@@ -28,6 +28,12 @@ public class Program2 {
 		System.out.println("Inserted!");
 		System.out.println(newDep);
 
+		System.out.println("\n=== TEST 5: Delete update ====");
+		dep = depDao.findById(1);
+		dep.setName("TI");
+		depDao.update(dep);
+		System.out.println("Update Completed!");
+
 		DB.closeConnection();
 
 	}
